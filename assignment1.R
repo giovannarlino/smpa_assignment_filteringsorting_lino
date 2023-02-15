@@ -1,18 +1,40 @@
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
 #first we'll load our libraries
 #make sure to install the tidyverse if it's not already installed
 library(tidyverse)
 library(lubridate)
 
-# run this line below load the data for this assignment
-# we'll use a built-in dataset from the ggplot2 package (loaded as party of the tidyverse)
+```
+
+#run this line below load the data for this assignment
+#we'll use a built-in dataset from the ggplot2 package (loaded as party of the tidyverse)
+
+```{r}
+
 housesales <- ggplot2::txhousing
+
+```
 
 # This dataset includes monthly housing sales by city in the state of texas from 2000-2015.
 # let's take a look at it
-housesales
+
+```{r}
+
+housesales 
+
+```
 
 # You can also see it in the view window by running this line
+
+```{r}
+
 View(housesales)
+
+```
 
 
 # FOR EACH OF THE QUESTIONS BELOW, WRITE YOUR WORKING R CODE TO RETURN THE REQUESTED RESULTS
@@ -24,13 +46,21 @@ View(housesales)
 # 1) The column "year" indicates the year. Filter to return only results from 2015. 
 # (note that because the column is numeric, you wouldn't use quotes as with text when setting your filter value)
 
+```{r}
 
+filter(housesales, year == 2015)
 
+```
 
 
 # 2) Similar to the above question, filter results from 2010 onward, so 2010-2015.
 
 
+```{r}
+
+filter(housesales, year >=2010, year<=2015)
+
+```
 
 
 
@@ -38,13 +68,21 @@ View(housesales)
 # (note, remember R is case sensitive)
 
 
+```{r}
 
+filter(housesales, city == 'Houston')
+
+```
 
 
 # 4) Filter for only where the city is Houston as above, and now also filter for only 
 # the year 2010. The results should give you 12 records, one for each month in 2010 for Houston.
 
+```{r}
 
+filter(housesales, city == 'Houston', year == 2010)
+
+```
 
 
 
